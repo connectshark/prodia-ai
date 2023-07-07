@@ -1,4 +1,4 @@
-class ProdiaJS {
+class ProdiaAI {
   #API_DOMAIN = 'https://api.prodia.com'
   #API_VERSION = 'v1'
 
@@ -30,4 +30,4 @@ class ProdiaJS {
   }
 }
 
-export default ProdiaJS
+export default ProdiaAI
