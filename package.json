@@ -1,10 +1,20 @@
 {
   "name": "prodia-ai",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "license": "MIT",
+  "homepage": "https://github.com/connectshark/prodia-ai",
+  "keywords": [
+    "ai",
+    "prodia"
+  ],
   "author": {
-    "name": "Chambers <nosegates@gmail.com>"
+    "name": "Chambers",
+    "email": "nosegates@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/connectshark/prodia-ai"
   },
   "files": [
     "dist",
