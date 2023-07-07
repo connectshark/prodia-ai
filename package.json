@@ -1,0 +1,22 @@
+{
+  "name": "prodia-ai",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "main": "./dist/prodia.umd.cjs",
+  "module": "./dist/prodia.js",
+  "exports": {
+    "import": "./dist/prodia.js",
+    "require": "./dist/prodia.umd.cjs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9"
+  }
+}
