@@ -1,4 +1,5 @@
 # Prodia-AI
+![npm](https://img.shields.io/npm/v/prodia-ai)
 
 
 ## How to use
@@ -34,4 +35,5 @@ const res = await prodiai.createJob(config)
 ```
 
 ## LICENSE
-[MIT](/LICENSE)
+
+[![GitHub](https://img.shields.io/github/license/connectshark/prodia-ai)](https://github.com/connectshark/prodia-ai/blob/main/LICENSE)

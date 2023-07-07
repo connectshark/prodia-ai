@@ -4,8 +4,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'main.js',
-      name: 'ProdiaJS',
-      fileName: 'prodiajs'
+      name: 'ProdiaAI',
+      fileName: 'prodia-ai'
     }
   }
 })
