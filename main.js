@@ -28,6 +28,7 @@ class ProdiaAI {
     'elldreths-vivid-mix.safetensors [342d9d26]',
     'lyriel_v15.safetensors [65d547c5]',
     'lyriel_v16.safetensors [68fceea2]',
+    'mechamix_v10.safetensors [ee685731]',
     'meinamix_meinaV9.safetensors [2ec66ab0]',
     'openjourney_V4.ckpt [ca2f377f]',
     'portrait+1.0.safetensors [1400e684]',
