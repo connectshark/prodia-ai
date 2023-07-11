@@ -13,6 +13,8 @@ declare module 'prodia-ai' {
      */
     constructor({ key }: { key: string });
   
+    models: string[];
+    
     /**
      * Creates an AI image job.
      * @param {Object} config - Image job configuration.
