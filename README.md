@@ -5,6 +5,7 @@
 
 
 ## Table of content
+- [Get your key](#get-your-key)
 - [Installation](#installation)
 - [Usage](#usage)
   - [Installation](#installation)
@@ -12,6 +13,9 @@
   - [Get job detail](#get-job-detail)
   - [Create job](#create-job)
 - [License](#license)
+
+## Get your key
+Visiting [this page](https://app.prodia.com/api) can obtain your API key.
 
 ## Installation
 

@@ -5,6 +5,9 @@
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/connectshark/prodia-ai",
+  "bugs": {
+    "url": "https://github.com/connectshark/prodia-ai/issues"
+  },
   "keywords": [
     "ai",
     "prodia"
