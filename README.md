@@ -27,11 +27,9 @@ npm install prodia-ai
 ## Usage
 ### Initialization
 ```js
-import ProdiaAI from 'prodia-ai'
+import createProdiaAI from 'prodia-ai'
 
-const prodiai = new ProdiaAI({
-  key: 'prodia-key'
-})
+const prodiai = createProdiaAI('prodia-key')
 
 export default prodiai
 ```
