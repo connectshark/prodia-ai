@@ -4,16 +4,7 @@
 class ProdiaAI {
   #API_DOMAIN = 'https://api.prodia.com'
   #API_VERSION = 'v1'
-
-  /**
-   * Initializes a ProdiaAI instance.
-   * @param {Object} obj - Initialization parameters object.
-   * @param {String} obj.key - Your API key.
-   */
-  constructor({ key }) {
-    this.key = key
-  }
-
+  
   models = [
     'analog-diffusion-1.0.ckpt [9ca13f02]',
     'anythingv3_0-pruned.ckpt [2700c435]',
@@ -44,6 +35,15 @@ class ProdiaAI {
   ]
 
   /**
+   * Initializes a ProdiaAI instance.
+   * @param {Object} obj - Initialization parameters object.
+   * @param {String} obj.key - Your API key.
+   */
+  constructor (key) {
+    this.key = key
+  }
+
+  /**
    * Creates an AI image job.
    * @param {Object} config - Image job configuration.
    * @param {String} config.prompt - Image prompt.
@@ -54,13 +54,15 @@ class ProdiaAI {
    * @param {String} config.model - Image generation model.
    * @returns {Promise<String>} - Promise with the API response content.
    */
-  async createJob(config){
-    if (!config.prompt) {
+  async createJob(config) {
+    if (!config?.prompt && config.prompt === '') {
       throw new Error('Prompt is required!')
     }
-    const model = this.models.includes(config.model)
-    if (!model) {
-      throw new Error('Model not accepted')
+    if (config?.model) {
+      const model = this.models.includes(config.model)
+      if (!model) {
+        throw new Error('Model not accepted')
+      }
     }
     const fetch_response = await fetch(`${this.#API_DOMAIN}/${this.#API_VERSION}/job`, {
       method: 'POST',
@@ -79,7 +81,7 @@ class ProdiaAI {
    * @param {String} jobId - Job ID.
    * @returns {Promise<String>} - Promise with the API response content.
    */
-  async getJob(jobId){
+  async getJob (jobId) {
     if (!jobId) {
       throw new Error('JobID is required!')
     }
@@ -93,4 +95,18 @@ class ProdiaAI {
   }
 }
 
-export default ProdiaAI
+
+/**
+ * Creates an instance of ProdiaAI.
+ * @param {string} key - The API key used for authentication.
+ * @returns {ProdiaAI} The ProdiaAI instance.
+ * @throws {Error} If the API key is missing.
+ */
+const createProdiaAI = (key) => {
+  if (!key) {
+    throw new Error('API Key is required')
+  }
+  return new ProdiaAI(key)
+}
+
+export default createProdiaAI
