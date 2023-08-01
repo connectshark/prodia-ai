@@ -13,10 +13,4 @@ describe('initialization', () => {
   it('need an API key', () => {
     expect(() => createProdiaAI()).toThrowError('API Key is required')
   })
-
-  it('it should have models array', () => {
-    const models = prodiai.models
-    expect(models).toBeDefined()
-    expect(models).toBeTypeOf('object')
-  })
 })

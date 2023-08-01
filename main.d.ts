@@ -11,8 +11,6 @@ declare class ProdiaAI {
    */
   constructor(key: string)
 
-  models: string[]
-
   /**
    * Creates an AI image job.
    * @param {Object} config - Image job configuration.
@@ -22,7 +20,7 @@ declare class ProdiaAI {
    * @param {Number} config.cfg_scale - Image generation scale.
    * @param {String} config.sampler - Image generation sampler.
    * @param {String} config.model - Image generation model.
-   * @returns {Promise<String>} - Promise with the API response content.
+   * @returns {Promise<Object>} - Promise with the API response content.
    */
   createJob(config: {
     prompt: string
@@ -31,14 +29,27 @@ declare class ProdiaAI {
     cfg_scale: number
     sampler: string
     model: string
-  }): Promise<string>
+  }): Promise<{
+    job: string;
+    status: string;
+  }>
 
   /**
    * Retrieves information about a specific job ID.
    * @param {String} jobId - Job ID.
-   * @returns {Promise<String>} - Promise with the API response content.
+   * @returns {Promise<Object>} - Promise with the API response content.
    */
-  getJob(jobId: string): Promise<string>
+  getJob(jobId: string): Promise<{
+    job: string,
+    status: string,
+    imageUrl: string
+  }>
+
+  /**
+   * Get a list of current available models.
+   * @returns {Promise<string[]>} - Promise with the API response content.
+   */
+  getModels(): Promise<string[]>
 }
 
 /**
